@@ -2,6 +2,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from pathlib import Path
 import os
+import random
 
 import discord
 
@@ -22,6 +23,9 @@ async def echo(ctx, *args):
 async def bal(ctx):
     await ctx.send("matthew lerman moment")
 
+@client.command(name="rng")
+async def rng(ctx, num):
+    await ctx.send(random.randint(0, int(num)))
 
 def main():
     load_dotenv()
